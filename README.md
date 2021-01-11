@@ -2,6 +2,8 @@
 
 A DIY radar motion sensor based on ESP8266.
 
+This is for you, if you are unhappy with PIR sensors.
+
 ## Table of Contents
 
 - [Components](#components)
@@ -27,6 +29,13 @@ The **Wemos D1 mini** is a convenient component for two main reasons:
 However, any other ESP8266 can be used. Be aware that you might need additional components though and the provided 3D printed case might not fit your setup then.
 
 The **ambient light sensor** is optional, since the RCWL-0516 can also be hidden in drawers etc. where the on-board lux reading wouldn't be of much use anyway.
+
+The **RCWL-0516** is used as a 360 degree motion sensor which proved to have a range of about 5 meters, at least in my indoor use cases. There is a [GitHub Repo](https://github.com/jdesbonnet/RCWL-0516) with lots of details and dicussions, but here is a tl;dr of what I have learned about this chip to use it properly:
+
+- Power it from a stable source, i.e. *not* from a microcontroller which might experience voltage fluctuations when working on its wifi modem and whatnot
+- Provide at least 5V, although others have reported stable usage with a stable 3.3V supply as well
+- Use `VIN` to power the board
+- Beware of *glass*; it does not work well, or not at all, when located in a glass cabinet or similar
 
 The micro **USB breakout board** is handy, because:
 
@@ -171,5 +180,7 @@ FYI: I then use a `notify` which looks at the `lux` reading and decides whether 
 Please find an example for a printable case over on [Thingiverse](https://www.thingiverse.com/thing:4718903).
 
 I used white PETG which allows for the blue onboard status LED on the Wemos to shine through.
+
+I created the models using [FreeCAD](https://www.freecadweb.org/); please find the source file in this repository.
 
 
