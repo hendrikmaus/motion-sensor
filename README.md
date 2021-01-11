@@ -60,7 +60,7 @@ Wemos
 
 RCWL-0516
   OUT -> Wemos D6
-  5V  -> USB Breakout Board 5V
+  VIN -> USB Breakout Board 5V
   GND -> Wemos GND
 ```
 
